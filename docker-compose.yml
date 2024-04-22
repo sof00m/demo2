@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  accenture-backend:
+  container-name: accenture-backend
+  image: sof00m/demo2:2024-04-22
+  enviroments:
+     SPRING_DATASOURCE_URL: jdbc:postgresql://accenture-db:5432/test_db
+     SPRING_DATASOURCE_USERNAME: root 
+    - SPRING_DATASOURCE_PASSWORD=root #EINAI TO IDIO ME TA KATO (H TA PANO) APLOS OTAN BAZO PAYLA TO KANO ETSI ENO ME TO : KAI XORIS PAYLA DEN TO BAZO
+  ports:
+    - '8080:8080'
+
+accenture-db:
+  container-name: accenture-db
+  image: postgres:14.7
+  environments:
+    POSTGRES_USER: root
+    POSTGRES_PASSWORD: root
+    POSTRGRES_DB: test_db
+  ports:
+    - '5432:5432'
