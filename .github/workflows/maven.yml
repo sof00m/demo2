@@ -35,6 +35,7 @@ jobs:
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
     - name: Build Dockerfile
       run: | #kathetos gia na enoso polles entoles mazi
         echo ${{ secrets.DOCKER_TOKEN }} | docker login -u sof00m --password-stdin
